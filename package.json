@@ -1,0 +1,17 @@
+{
+  "name": "elm-calendar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "elm-test tests/CalendarTest.elm"
+  },
+  "author": "Anthony Bradley",
+  "license": "MIT",
+  "devDependencies": {
+    "elm-test": "^0.19.1-revision2"
+  }
+}
