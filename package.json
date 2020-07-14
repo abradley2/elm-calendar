@@ -7,11 +7,13 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "elm-test tests/CalendarTest.elm"
+    "test": "elm-test",
+    "coverage": "elm-coverage"
   },
   "author": "Anthony Bradley",
   "license": "MIT",
   "devDependencies": {
+    "elm-coverage": "^0.3.0",
     "elm-test": "^0.19.1-revision2"
   }
 }
