@@ -1,8 +1,9 @@
-module Calendar exposing (CalendarDate, Config, fromDate, fromTime, print)
-
-import Date exposing (Date, Unit(..), add, day, fromCalendarDate, month, weekdayNumber, year)
-import Time exposing (Month(..), Posix, Weekday(..), Zone, toMonth, toYear)
-
+module Calendar exposing
+    ( fromDate, fromTime
+    , CalendarDate
+    , Config
+    , print
+    )
 
 {-| A "sorta-port" of the Unix `cal` command to Elm. Outputs a "calendar grid" data structure that is very useful for
 creating datepickers, planners, and other UI widgets that are based around calendar months.
@@ -28,6 +29,11 @@ creating datepickers, planners, and other UI widgets that are based around calen
 @docs print
 
 -}
+
+import Date exposing (Date, Unit(..), add, day, fromCalendarDate, month, weekdayNumber, year)
+import Time exposing (Month(..), Posix, Weekday(..), Zone, toMonth, toYear)
+
+
 defaultConfig : Config
 defaultConfig =
     { startWeekdayNumber = 7
