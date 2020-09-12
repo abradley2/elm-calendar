@@ -199,7 +199,7 @@ padMonthEnd config currentList =
                 )
     of
         Just padDate ->
-            padMonthStart
+            padMonthEnd
                 config
                 (List.append
                     currentList
