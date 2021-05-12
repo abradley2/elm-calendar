@@ -31,12 +31,24 @@ creating datepickers, planners, and other UI widgets that are based around calen
 -}
 
 import Date exposing (Date, Unit(..), add, day, fromCalendarDate, month, weekdayNumber, year)
-import Time exposing (Month(..), Posix, Weekday(..), Zone, toMonth, toYear)
+import Time exposing (Month(..), Posix, Weekday(..), Zone, toMonth, toYear, Weekday(..))
+
+
+enumerateWeekday : Weekday -> Int
+enumerateWeekday w =
+    case w of
+        Mon -> 1
+        Tue -> 2
+        Wed -> 3
+        Thu -> 4
+        Fri -> 5
+        Sat -> 6
+        Sun -> 7
 
 
 defaultConfig : Config
 defaultConfig =
-    { startWeekdayNumber = 7
+    { startWeekday = Sun
     }
 
 
@@ -58,7 +70,7 @@ It is a 1-7 value with 1 representing Monday and 7 representing Sunday.
 
 -}
 type alias Config =
-    { startWeekdayNumber : Int
+    { startWeekday: Weekday
     }
 
 
@@ -161,7 +173,7 @@ padMonthStart config currentList =
             |> Maybe.map .date
             |> Maybe.andThen
                 (\date ->
-                    if weekdayNumber date == config.startWeekdayNumber then
+                    if weekdayNumber date == enumerateWeekday config.startWeekday then
                         Nothing
 
                     else
@@ -191,7 +203,7 @@ padMonthEnd config currentList =
             |> Maybe.map .date
             |> Maybe.andThen
                 (\date ->
-                    if weekdayNumber date == endWeekdayNumber config.startWeekdayNumber then
+                    if weekdayNumber date == endWeekdayNumber (enumerateWeekday config.startWeekday) then
                         Nothing
 
                     else
