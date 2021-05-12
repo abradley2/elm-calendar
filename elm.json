@@ -3,7 +3,7 @@
     "name": "abradley2/elm-calendar",
     "summary": "Elm version of the unix 'cal' command. Creates a 2d list representing a month",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "exposed-modules": [
         "Calendar"
     ],
