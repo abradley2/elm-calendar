@@ -54,17 +54,17 @@ defaultConfig =
 
 {-| Optional configuration for the `fromTime` and `fromDate` functions. Can be
 used to configure the starting weekday number for each "Week row" of the calendar output.
-It is a 1-7 value with 1 representing Monday and 7 representing Sunday.
+Utilizes the "Weekday" type from elm/time
 
     import Calendar exposing (fromTime)
-    import Time exposing (Posix, millisToPosix, utc)
+    import Time exposing (Posix, millisToPosix, utc, Weekday(..))
 
     july14th2020 =
         millisToPosix 1594725024442
 
     startOnMonday =
         fromTime
-            (Just { startWeekdayNumber = 1 })
+            (Just { startWeekday = Mon })
             utc
             july14th2020
 
