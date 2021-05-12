@@ -1,7 +1,7 @@
 {
     "type": "package",
     "name": "abradley2/elm-calendar",
-    "summary": "An Elm version of the unix 'cal' command. Outputs a grid representing a month",
+    "summary": "Elm version of the unix 'cal' command. Creates a 2d list representing a month",
     "license": "MIT",
     "version": "1.0.0",
     "exposed-modules": [
